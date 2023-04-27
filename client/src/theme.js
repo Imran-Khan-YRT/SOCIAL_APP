@@ -32,7 +32,7 @@ export const colorTokens = {
 
 // mui theme settings
 
-export const themeSettings = (mdoe) => {
+export const themeSettings = (mode) => {
     return {
         palette: {
             mode: mode,
