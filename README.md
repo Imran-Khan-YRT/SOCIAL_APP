@@ -24,3 +24,5 @@
 # dropzone : file upload and handle
 
 3. `jsconfig.json` file controls the default directory starts from 'src' folder
+
+4. visit the documentation on persist & getmiddleware on client
