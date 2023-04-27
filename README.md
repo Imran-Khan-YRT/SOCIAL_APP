@@ -22,3 +22,5 @@
 # redux-persist : store the state in localStorage
 
 # dropzone : file upload and handle
+
+3. `jsconfig.json` file controls the default directory starts from 'src' folder
