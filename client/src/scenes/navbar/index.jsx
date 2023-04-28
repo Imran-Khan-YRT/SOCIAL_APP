@@ -54,7 +54,7 @@ const Navbar = () => {
           color="primary"
           onClick={() => navigate("/home")}
           sx={{
-            "& :hover": {
+            "&:hover": {
               color: primaryLight,
               cursor: "pointer",
             },
@@ -102,7 +102,7 @@ const Navbar = () => {
                   pr: "0.25rem",
                   width: "3rem",
                 },
-                "& .MuiSelect:focus": {
+                "& .MuiSelect-select:focus": {
                   backgroundColor: neutralLight,
                 },
               }}
@@ -111,7 +111,7 @@ const Navbar = () => {
               <MenuItem value={fullName}>
                 <Typography>{fullName}</Typography>
               </MenuItem>
-              <MenuItem onClick={() => dispatch(setLogout)}>Log Out</MenuItem>
+              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
             </Select>
           </FormControl>
         </FlexBetween>
@@ -176,7 +176,7 @@ const Navbar = () => {
                     pr: "0.25rem",
                     width: "3rem",
                   },
-                  "& .MuiSelect:focus": {
+                  "& .MuiSelect-select:focus": {
                     backgroundColor: neutralLight,
                   },
                 }}
@@ -185,7 +185,9 @@ const Navbar = () => {
                 <MenuItem value={fullName}>
                   <Typography>{fullName}</Typography>
                 </MenuItem>
-                <MenuItem onClick={() => dispatch(setLogout)}>Log Out</MenuItem>
+                <MenuItem onClick={() => dispatch(setLogout())}>
+                  Log Out
+                </MenuItem>
               </Select>
             </FormControl>
           </FlexBetween>
