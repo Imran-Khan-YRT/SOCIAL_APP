@@ -74,14 +74,12 @@ const PostWidget = ({
           <FlexBetween gap="0.3rem">
             <IconButton onClick={patchLike}>
               {isLiked ? (
-                <FavoriteBorderOutlined sx={{ color: primary }} />
+                <FavoriteOutlined sx={{ color: primary }} />
               ) : (
                 <FavoriteBorderOutlined />
               )}
             </IconButton>
             <Typography>{likesCount}</Typography>
-            {console.log("Com-<" + comments)}
-            {console.log("Com2-<" + likesCount)}
           </FlexBetween>
           {/* comments */}
           <FlexBetween gap="0.3rem">
@@ -89,7 +87,6 @@ const PostWidget = ({
               <ChatBubbleOutlineOutlined />
             </IconButton>
             {/* <Typography>{comments.length}</Typography> */}
-            {console.log("Com3-<" + comments)}
           </FlexBetween>
         </FlexBetween>
         <IconButton>

@@ -26,9 +26,9 @@ const PostsWidget = ({ userId, isProfile = false }) => {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
-    console.log("fata->"+data);
+    console.log("response" + response);
     const data = await response.json();
-    
+
     dispatch(setPosts({ posts: data }));
   };
 
