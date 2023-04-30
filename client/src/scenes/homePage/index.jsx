@@ -4,7 +4,7 @@ import Navbar from "scenes/navbar";
 import MyPostWidget from "scenes/widgets/MyPostWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
 import UserWidget from "scenes/widgets/UserWidget";
-import AdvertWidget from "scenes/widgets/AdvertWidget"
+import AdvertWidget from "scenes/widgets/AdvertWidget";
 import FriendListWidget from "scenes/widgets/FriendListWidget";
 
 const HomePage = () => {
@@ -28,9 +28,7 @@ const HomePage = () => {
           mt={isNonMobileScreen ? undefined : "2rem"}
         >
           <MyPostWidget picturePath={picturePath} />
-          {console.log("here1")}
           <PostsWidget userId={_id} />
-          {console.log("here4")}
         </Box>
         {isNonMobileScreen && (
           <Box flexBasis="26%">
