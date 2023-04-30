@@ -8,7 +8,7 @@ import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 import { useNavigate } from "react-router-dom";
 
-const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
+const Friend = ({ friendId, fullName, subtitle, userPicturePath }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { _id } = useSelector((state) => state.user);
@@ -22,7 +22,6 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const medium = palette.primary.medium;
 
   const isFriend = friends.find((friend) => friend._id === friendId);
-  
 
   const patchFriend = async () => {
     const response = await fetch(
@@ -60,8 +59,8 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
               },
             }}
           >
-            {name}
-            {console.log(name)}
+            {fullName}
+            {/* {console.log(fullName)} */}
           </Typography>
           <Typography color={medium} fontSize="0.75rem">
             {subtitle}

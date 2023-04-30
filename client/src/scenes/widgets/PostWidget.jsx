@@ -16,7 +16,7 @@ import { setPost } from "state";
 const PostWidget = ({
   postId,
   postUserId,
-  name,
+  fullName,
   description,
   location,
   picturePath,
@@ -52,7 +52,7 @@ const PostWidget = ({
     <WidgetWrapper m="2rem 0">
       <Friend
         friendId={postUserId}
-        name={name}
+        fullName={fullName}
         subtitle={location}
         userPicturePath={userPicturePath}
       />
@@ -80,13 +80,16 @@ const PostWidget = ({
               )}
             </IconButton>
             <Typography>{likesCount}</Typography>
+            {console.log("Com-<" + comments)}
+            {console.log("Com2-<" + likesCount)}
           </FlexBetween>
           {/* comments */}
           <FlexBetween gap="0.3rem">
             <IconButton onClick={() => setIsComments(!isComments)}>
               <ChatBubbleOutlineOutlined />
             </IconButton>
-            {isComments && <Typography>{comments.length}</Typography>}
+            {/* <Typography>{comments.length}</Typography> */}
+            {console.log("Com3-<" + comments)}
           </FlexBetween>
         </FlexBetween>
         <IconButton>
@@ -96,7 +99,7 @@ const PostWidget = ({
       {isComments && (
         <Box mt="0.5rem">
           {comments.map((comment, i) => (
-            <Box key={`${name}-${i}`}>
+            <Box key={`${fullName}-${i}`}>
               <Divider />
               <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
                 {comment}
