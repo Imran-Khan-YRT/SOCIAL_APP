@@ -15,17 +15,18 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user.friends);
 
-  const { palette } = useTheme;
+  const { palette } = useTheme();
   const primaryLight = palette.primary.light;
   const primaryDark = palette.primary.dark;
   const main = palette.primary.main;
   const medium = palette.primary.medium;
 
   const isFriend = friends.find((friend) => friend._id === friendId);
+  
 
   const patchFriend = async () => {
     const response = await fetch(
-      `http://localhost:3001/user/${_id}/${friendId}`,
+      `http://localhost:3001/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
@@ -60,6 +61,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
             }}
           >
             {name}
+            {console.log(name)}
           </Typography>
           <Typography color={medium} fontSize="0.75rem">
             {subtitle}

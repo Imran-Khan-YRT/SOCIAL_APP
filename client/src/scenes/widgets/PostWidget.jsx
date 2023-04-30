@@ -13,7 +13,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
 
-const PostsWidget = ({
+const PostWidget = ({
   postId,
   postUserId,
   name,
@@ -31,7 +31,7 @@ const PostsWidget = ({
   const isLiked = Boolean(likes[loggedInUserId]);
   const likesCount = Object.keys(likes).length;
 
-  const { palette } = useTheme;
+  const { palette } = useTheme();
   const main = palette.neutral.main;
   const primary = palette.primary.main;
 
@@ -56,10 +56,10 @@ const PostsWidget = ({
         subtitle={location}
         userPicturePath={userPicturePath}
       />
+
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}
       </Typography>
-
       {picturePath && (
         <img
           width="100%"
@@ -86,10 +86,10 @@ const PostsWidget = ({
             <IconButton onClick={() => setIsComments(!isComments)}>
               <ChatBubbleOutlineOutlined />
             </IconButton>
-            <Typography>{comments.length}</Typography>
+            {isComments && <Typography>{comments.length}</Typography>}
           </FlexBetween>
         </FlexBetween>
-        <IconButton>z
+        <IconButton>
           <ShareOutlined />
         </IconButton>
       </FlexBetween>
@@ -103,11 +103,11 @@ const PostsWidget = ({
               </Typography>
             </Box>
           ))}
-          <Divider /> 
+          <Divider />
         </Box>
       )}
     </WidgetWrapper>
   );
 };
 
-export default PostsWidget;
+export default PostWidget;
