@@ -18,7 +18,7 @@ export const register = async (req, res) => {
         } = req.body;
 
         const salt = await bcrypt.genSalt();
-        console.log(salt);
+        // console.log(salt);
         const passwordHash = await bcrypt.hash(password, salt);
 
         const newUser = new User({
@@ -38,7 +38,7 @@ export const register = async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
-}
+};
 
 // LOGGING in
 
@@ -56,7 +56,7 @@ export const login = async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
         delete user.password;
         res.status(200).json({ token, user });
-    } catch (error) {
-
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
-}
+};
