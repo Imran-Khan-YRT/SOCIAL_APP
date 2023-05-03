@@ -86,7 +86,7 @@ const PostWidget = ({
             <IconButton onClick={() => setIsComments(!isComments)}>
               <ChatBubbleOutlineOutlined />
             </IconButton>
-            {/* <Typography>{comments.length}</Typography> */}
+            <Typography>{comments.length}</Typography>
           </FlexBetween>
         </FlexBetween>
         <IconButton>
